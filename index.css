@@ -36,10 +36,24 @@ body {
 }
 
 p {
+
+	display: inline-block;
+
 	padding: 0.25em 1em;
 	margin: 0.5em 0.5em 0 0.5em;
 	border-radius: 30px;
 	border: 1px solid black;
+	clear: both;
+}
+
+.left .left, .right .right {
+	background-color: lightblue;
+	float: right; 
+}
+
+.left .right, .right .left {
+	background-color: pink;
+	float: left;
 }
 
 
