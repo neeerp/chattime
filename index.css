@@ -32,10 +32,15 @@ body {
 	
 	margin: 0;
 	border-radius: 50px;
+
+	overflow-y: scroll;
 }
 
 .message-area p {
-	height: 200px;
+	padding: 0.5em 1em;
+	margin: 0.5em 0.5em 0 0.5em ;
+	border-radius: 30px
+	border: 1px solid black;
 }
 
 
