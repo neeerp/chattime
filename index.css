@@ -2,40 +2,42 @@
 body {
 	background-color: #d9edf7;
 
-	margin: 0;
 	padding: 0;
 
 	box-sizing: border-box;
+
 }
 
+.col-sm-6 {
+	position: relative;
+	margin: auto;
+}
 
 
 
 .messenger-box {
 	height: 500px;
-	width: 50%;
+	width: 300px;
 
 	margin: auto;
-	border: 1px solid;
+	padding: 0;
+	border: 5px solid;
+	border-radius: 50px;
+
 }
 
 .message-area {
-	height: 400px;
-	width: 100%;
-
+	height: 350px;
+	width: 290px;
+	
 	margin: 0;
-	padding: 0;
-
-	overflow-y: scroll;
+	border-radius: 50px;
 }
 
-
-.message {
-	padding: 1em;
-	margin: 1em;
-	border: 1px solid;
-	border-radius: 20px;
+.message-area p {
+	height: 200px;
 }
+
 
 textarea {
 	height: 100px;
