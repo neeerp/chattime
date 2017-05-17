@@ -2,6 +2,10 @@
 
 <html>
 <head>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 	<!-- Latest compiled and minified CSS -->
@@ -34,13 +38,21 @@
 			<div class="col-sm-6">
 				<div class="messenger-box left">
 					<div class="message-area"></div>
-					<textarea></textarea>
+					<div class="input">
+						<textarea></textarea>
+						<img src="images/plus.png" class="file-up" />
+						<input type="file" name="fileLeft" id="fileLeft" class="file-input" />
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="messenger-box right">
 					<div class="message-area"></div>
-					<textarea></textarea>
+					<div class="input">
+						<textarea></textarea>
+						<input type="file" name="fileRight" id="fileRight" class="file-input" />
+						<img src="images/plus.png" class="file-up" />			
+					</div>
 				</div>
 			</div>
 		</div>

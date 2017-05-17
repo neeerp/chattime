@@ -5,41 +5,48 @@ $(document).ready(function() {
 			var message = $(this).val();
 			if (message !== "") {		
 				var client = $(this).parents(".left").length != 0 ? "left" : "right";
-				$(".message-area").html(
-					$(".message-area").html() + "<p class=\"" + client + "\">" + message + "</p>");
+				$(".message-area").html($(".message-area").html() + "<p class=\"" + client + "\">" + message + "</p>");
 				$(".message-area").scrollTop($(".message-area").prop("scrollHeight")); /** Scroll messages to bottom **/
 				$(".message-area").each( function() {orientTextBoxes(this)});
 			}
+			$(this).val(""); /* Clear the text area */
+			event.preventDefault(); /* Stop browser from adding new line automatically */
+		}
+	});
 
-			$(this).val(""); /** Clear the text area **/
-			event.preventDefault();
-			return false;
-
+	$(".file-up").click(function () {
+		if ($(this).index() == 0) {
+			$(".file-input")[0].click();
+		} else {
+			$(".file-input")[1].click();
 		}
 	});
 
 });
 
+
 function orientTextBoxes(messageArea) {
+	/** 
+	*   Given a message area with at least two messages, styles the two most recent messages
+	*   if they are both from the same sender.
+	*/
 
 	var messages = messageArea.children;
-	
-
 	if (messages.length > 1) {
 		var currentSide = messages[messages.length - 1].classList.contains("left") ? "left" : "right";
+		var prevMessage = messages[messages.length - 2];
+		var curMessage = messages[messages.length - 1];
 
-		/** If at least two messages stacked, style them accordingly **/
-		if (messages[messages.length -2].classList.contains(currentSide)) {
+		/* If at least two messages stacked, style them accordingly */
+		if (prevMessage.classList.contains(currentSide)) {
 
-			if (messages[messages.length -2].classList.contains("bottom")) {
-				messages[messages.length -2].classList.remove("bottom");
-				messages[messages.length -2].classList.add("mid");
-				messages[messages.length -1].classList.add("bottom");
-			}
-
-			else {
-				messages[messages.length -2].classList.add("top");
-				messages[messages.length -1].classList.add("bottom");
+			if (prevMessage.classList.contains("bottom")) {
+				prevMessage.classList.remove("bottom");
+				prevMessage.classList.add("mid");
+				curMessage.classList.add("bottom");
+			} else {
+				prevMessage.classList.add("top");
+				curMessage.classList.add("bottom");
 			}
 
 		}
