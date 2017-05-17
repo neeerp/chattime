@@ -17,7 +17,7 @@ $(document).ready(function() {
 	$(".file-input").change( function(event) {
 		var path = URL.createObjectURL(event.target.files[0]);
 		var side = $(this).parents(".left").length != 0 ? "left" : "right";
-		createMessage(side, "<img src=\"" + path + "\" />");
+		createMessage(side, "<img src=\"" + path + "\" />", true);
 	});
 
 	// File-upload
@@ -62,8 +62,15 @@ function orientTextBoxes(messageArea) {
 /**
  * Creates a message in the message area, scrolls the screen, and orients the message boxes.
  */
-function createMessage(side, contents) {
+function createMessage(side, contents, image = false) {
 	$(".message-area").html($(".message-area").html() + "<p class=\"" + side + "\">" + contents + "</p>");
-	$(".message-area").scrollTop($(".message-area").prop("scrollHeight"));
 	$(".message-area").each( function() {orientTextBoxes(this)});
+	
+	// Images don't load instantaneously, so if the image is not loaded, the bottom of the box
+	// is higher than expected!
+	var loadTime = image ? 50 : 0;
+	setTimeout(function() {
+		$(".message-area").scrollTop($(".message-area").prop("scrollHeight"));
+	}, loadTime);
+	
 }
