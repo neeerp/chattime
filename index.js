@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	// Send text message
 	$("textarea").keydown(function(event) {
-		if (event.keyCode == 13 && !event.shiftKey) {
+		if (event.keyCode == 13 && !event.shiftKey) { // Don't send if shift + enter hit
 			var message = $(this).val();
 			if (message !== "") {		
 				var side = $(this).parents(".left").length != 0 ? "left" : "right";
@@ -10,7 +10,7 @@ $(document).ready(function() {
 			}
 			$(this).val(""); // Clear the text area 
 			event.preventDefault(); // Stop browser from adding new line automatically 
-		}
+		} 
 	});
 
 	// Send image

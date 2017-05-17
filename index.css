@@ -34,36 +34,35 @@ body {
 p {
 	color: white;
 	font-family: 'Roboto', sans-serif;
-
-	display: inline-block;
-
-	max-width: 230px;
 	white-space: pre-wrap;
 	word-wrap: break-word;
 
-	padding: 0.25em 0.6em;
-	margin: 0.5em 0.5em 0 0.5em;
 	border-radius: 12px;
 	border: none;
-	clear: both;
 
+	max-width: 230px;
+
+	padding: 0.25em 0.6em;
+	margin: 0.5em 0.5em 0 0.5em;
+
+	clear: both;
+	display: inline-block;
 }
 
 p img {
+	border-radius: 5%;
 
 	width: 100%;
 	height: auto;
 	padding: 0.25em 0;
 
 	display: inline-block;
-
 	vertical-align: middle;
 
 	margin: auto;
-
-	border-radius: 5%;
 }
 
+/* Orientation of textboxes */
 .left .left, .right .right {
 	background-color: lightblue;
 	float: right; 
@@ -96,7 +95,7 @@ p img {
 }
 
 
-
+/* Input fields/ buttons */
 .input {
 	height: 30px;
 	width: 290px;
@@ -109,6 +108,7 @@ p img {
 	border-bottom: 2px solid rgba(0,0,0,0.6);
 }
 
+/** Hidden **/
 .file-input {
 	width: 0.1px;
 	height: 0.1px;
@@ -131,7 +131,6 @@ p img {
 }
 
 textarea {
-	
 	height: 27px;
 	width: 260px;
 	resize: none;
