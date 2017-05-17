@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	
 	// Send text message
 	$("textarea").keydown(function(event) {
 		if (event.keyCode == 13 && !event.shiftKey) { // Don't send if shift + enter hit
@@ -35,6 +35,8 @@ $(document).ready(function() {
 /** 
  *  Given a message area with at least two messages, styles the two most recent messages
  *  if they are both from the same sender.
+ *
+ *  @return: none
  */
 function orientTextBoxes(messageArea) {
 	var messages = messageArea.children;
@@ -62,6 +64,8 @@ function orientTextBoxes(messageArea) {
 /**
  * Creates a message in the message area, scrolls the screen, and orients the message boxes.
  * Also plays a sound effect.
+ *
+ * @return: none
  */
 function createMessage(side, contents, image = false) {
 	$(".message-area").html($(".message-area").html() + "<p class=\"" + side + "\">" + contents + "</p>");
