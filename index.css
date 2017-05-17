@@ -5,15 +5,12 @@ body {
 	padding: 0;
 
 	box-sizing: border-box;
-
 }
 
 .col-sm-6 {
 	position: relative;
 	margin: auto;
 }
-
-
 
 .messenger-box {
 	height: 500px;
@@ -24,25 +21,32 @@ body {
 	border: 5px solid;
 	border-radius: 50px;
 
+	background-color: rgb(256,256,256);
+	border-color: rgba(0,0,0,0.6);
 }
 
 .message-area {
-	height: 330px;
-	width: 285px;
+	height: 315px;
+	width: 290px;
 	
-	margin-top: 20px;
+	margin-top: 45px;
 
 	overflow-y: scroll;
+
+	border-top: 2px solid rgba(0,0,0,0.6);
+	border-bottom: 2px solid rgba(0,0,0,0.6);
 }
 
 p {
 
+	font-family: 'Roboto', sans-serif;
+
 	display: inline-block;
 
-	padding: 0.25em 1em;
+	padding: 0.25em 0.6em;
 	margin: 0.5em 0.5em 0 0.5em;
-	border-radius: 30px;
-	border: 1px solid black;
+	border-radius: 12px;
+	border: none;
 	clear: both;
 }
 
@@ -56,15 +60,44 @@ p {
 	float: left;
 }
 
+.top, .mid, .bottom {
+	margin: 0, 1em;
+}
+
+/** Box edge curving in text blocks **/
+.left .left.top, .right .right.top, .left .left.mid, .right .right.mid {
+	border-bottom-right-radius: 3px;
+}
+
+.left .right.top, .right .left.top, .left .right.mid, .right .left.mid {
+	border-bottom-left-radius: 3px;
+}
+
+.left .left.bottom, .right .right.bottom, .left .left.mid, .right .right.mid {
+	border-top-right-radius: 3px;
+}
+
+.left .right.bottom, .right .left.bottom , .left .right.mid, .right .left.mid{
+	border-top-left-radius: 3px;
+}
+
 
 textarea {
-	height: 100px;
-	width: 100%;
+	height: 75px;
+	width: 290px;
 
 	padding: 0;
 	margin: 0;
 
-	border: none;
+	border: 2px solid rgba(0,0,0,0.6);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	resize: none;
+
+	border-bottom: 2px solid rgba(0,0,0,0.6);
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
 
 ::-webkit-scrollbar {
