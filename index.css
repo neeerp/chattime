@@ -38,6 +38,7 @@ p {
 	display: inline-block;
 
 	max-width: 230px;
+	white-space: pre-wrap;
 	word-wrap: break-word;
 
 	padding: 0.25em 0.6em;
