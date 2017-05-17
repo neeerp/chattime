@@ -61,10 +61,14 @@ function orientTextBoxes(messageArea) {
 
 /**
  * Creates a message in the message area, scrolls the screen, and orients the message boxes.
+ * Also plays a sound effect.
  */
 function createMessage(side, contents, image = false) {
 	$(".message-area").html($(".message-area").html() + "<p class=\"" + side + "\">" + contents + "</p>");
 	$(".message-area").each( function() {orientTextBoxes(this)});
+	
+	var ping = new Audio("sounds/ding.mp3");
+	ping.play();
 	
 	// Images don't load instantaneously, so if the image is not loaded, the bottom of the box
 	// is higher than expected!
